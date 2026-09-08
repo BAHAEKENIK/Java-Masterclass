@@ -1,5 +1,7 @@
 import java.util.ArrayList;
 public class Exercice1{
+	public static void main(String[] args){
+		
 	ArrayList<String> villes = new ArrayList<>();
 	villes.add("Paris");
 	villes.add("Lyon");
@@ -12,6 +14,7 @@ public class Exercice1{
 	villes.remove("Lyon");
 	villes.add("Nice");
 	System.out.println(villes.get(2));
-	String containe = (ville.contains("Marseille"))?"exists": "non exists";
+	String containe = (villes.contains("Marseille"))?"exists": "non exists";
 	System.out.println(containe);
+	}
 }
