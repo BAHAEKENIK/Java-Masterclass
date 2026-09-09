@@ -1,0 +1,37 @@
+public class Utilitaires{
+	public static <T> void afficherTableau(T[] tableau){
+		for(T element : tableau){
+			System.out.print(e + " ");
+		
+		}
+		System.out.println();
+	}
+	public static <T> boolean estEgal(T a,T b){
+		return a == b;
+	}
+	public static <T extends Comparable<T>> T plusGrand(T a, T b){
+		return (a.compareTo(b)>0) ? a : b;
+	}
+	public static <T> T[] inverser(T[] tableau){
+		int len = tableau.length;
+		T[] newTableau =  new T[len];
+		int index = 0;
+		for(int i = len - 1; i >= 0;i--){
+			newTableau[index] = tableau[i];
+			index++;
+		}
+		tableau = newTableau;
+		return tableau;
+
+	}
+	public static void main(String[] args){
+		Integer[] tableau = {1, 2, 3, 4, 5};
+		afficherTableau(tableau);
+		inverser(tableau);
+		afficherTableau(tableau);
+		System.out.println(estEgal("Bonjour", "Bonjour"));
+		System.out.println(plusGrand(15,22));
+}
+		
+		
+		
