@@ -23,4 +23,4 @@ J'ai créé mes premiers endpoints REST avec Spring Boot.
 @GetMapping("/hello")
 public String direBonjour() {
     return "Bonjour depuis Spring Boot !";
-} 
+}
