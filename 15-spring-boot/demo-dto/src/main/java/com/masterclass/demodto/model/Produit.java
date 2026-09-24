@@ -2,6 +2,8 @@ package com.masterclass.demodto.model;
 
 import jakarta.persistence.*;
 
+@Entity 
+@Table(name = "produits")
 public class Produit{
     @Id 
     @GeneratedValue(strategy = GenerationType.IDENTITY)

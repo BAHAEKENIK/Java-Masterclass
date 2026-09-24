@@ -1,25 +1,34 @@
 package com.masterclass.demodto.model;
-import com.masterclass.demodto.model.Auteur;
+
 import jakarta.persistence.*;
 import java.time.LocalDate;
+
+@Entity 
+@Table(name = "articles")
 public class Article{
     @Id 
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
 
     @Column(nullable = false)
-    private String nom;
+    private String titre;
 
-    @Column(nullable = false)
+
+    @Column(length =  2000)
+    private String contenu;
+
+    @Column(name = "date_publication")
     private LocalDate datePublication;
-    @ManyToOne
-    @JoinColumn(name = "auteur_id")
+
+    // Relation : Plusieurs articles -> Un auteur
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "auteur_id", nullable = false)
     private Auteur auteur;
 
     public Article(){}
-    public Article(Long id, String nom, LocalDate datePublication, Auteur auteur){
-        this.id = id;
-        this.nom = nom;
+    public Article(String titre, String contenu, LocalDate datePublication, Auteur auteur){
+        this.titre = titre;
+        this.contenu = contenu;
         this.datePublication = datePublication;
         this.auteur = auteur;
     }
@@ -29,17 +38,17 @@ public class Article{
     public void setId(Long id){
         this.id = id;
     }
-    public String getNom(){
-        return nom;
+    public String getTitre(){
+        return titre;
     }
-    public void setNom(String nom){
-        this.nom = nom;
+    public void setTitre(String titre){
+        this.titre = titre;
     }
-    public LocalDate getDatePublication(){
-        return datePublication;
+    public String getContenu(){
+        return contenu;
     }
-    public void setDatePublication(LocalDate datePublication){
-        this.datePublication = datePublication;
+    public void setContenu(String contenu){
+        this.contenu = contenu;
     }
     public Auteur getAuteur(){
         return auteur;
@@ -47,5 +56,10 @@ public class Article{
     public void setAuteur(Auteur auteur){
         this.auteur = auteur;
     }
-    
+    public LocalDate getDatePublication(){
+        return datePublication;
+    }
+    public void setDatePublication(LocalDate datePublication){
+        this.datePublication = datePublication;
+    }
 }

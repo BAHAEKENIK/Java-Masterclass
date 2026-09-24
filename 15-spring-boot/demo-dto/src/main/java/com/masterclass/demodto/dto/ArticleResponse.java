@@ -1,17 +1,15 @@
 package com.masterclass.demodto.dto;
+
 import java.time.LocalDate;
+
 public class ArticleResponse{
     private Long id;
-    private String nom;
+    private String titre;
+    private String contenu;
     private LocalDate datePublication;
     private String nomAuteur;
 
-    public ArticleResponse(){}
-    public ArticleResponse(Long id, String nom, LocalDate datepublication, String nomAuteur){
-        this.id = id;
-        this.nom = nom;
-        this.datePublication = datePublication;
-        this.nomAuteur = nomAuteur;
+    public ArticleResponse(){
 
     }
     public Long getId(){
@@ -20,11 +18,17 @@ public class ArticleResponse{
     public void setId(Long id){
         this.id = id;
     }
-    public String getNom(){
-        return nom;
+    public String getTitre(){
+        return titre;
     }
-    public void setNom(String nom){
-        this.nom = nom;
+    public void setTitre(String titre){
+        this.titre = titre;
+    }
+    public String getContenu(){
+        return contenu;
+    }
+    public void setContenu(String contenu){
+        this.contenu = contenu;
     }
     public LocalDate getDatePublication(){
         return datePublication;

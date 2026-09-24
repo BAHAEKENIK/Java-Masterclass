@@ -1,11 +1,18 @@
 package com.masterclass.demodto.dto;
 
-public class AuteurRequest{
+public class AuteurResponse{
+    private Long id;
     private String nom;
     private String email;
 
-    public AuteurRequest(){}
+    public AuteurResponse(){}
+    public Long getId(){
+        return id;
 
+    }
+    public void setId(Long id){
+        this.id = id;
+    }
     public String getNom(){
         return nom;
     }
